@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "プレイリストの再生時間操作",
+  "version": "1.0",
+  "description": "プレイリストに登録されている動画の再生する部分をコントロールできる拡張機能",
+  "permissions": ["storage", "tabs"],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
